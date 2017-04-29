@@ -24,7 +24,7 @@ class Ui_mainWindow(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-
+#---------------------------------------------------------------------------------------------------------buttons-------
         self.pushButton = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.pushButton.setObjectName("pushButton")
 
@@ -51,7 +51,6 @@ class Ui_mainWindow(object):
         self.pushButton_3.setObjectName("pushButton_3")
 
         self.horizontalLayout_3.addWidget(self.pushButton_3)
-
 
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(10, 10, 521, 51))
@@ -141,6 +140,12 @@ class Ui_mainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
 
+        self.lineEdit.textChanged.connect(self.line_edit_text_changed1)
+        self.lineEdit_2.textChanged.connect(self.line_edit_text_changed2)
+        self.lineEdit_3.textChanged.connect(self.line_edit_text_changed3)
+        self.lineEdit_4.textChanged.connect(self.line_edit_text_changed4)
+        self.lineEdit_5.textChanged.connect(self.line_edit_text_changed5)
+
         self.lineEdit.setMaxLength(10)
         self.lineEdit_2.setMaxLength(10)
         self.lineEdit_3.setMaxLength(10)
@@ -168,17 +173,10 @@ class Ui_mainWindow(object):
         self.comboBox_4.setItemText(1, _translate("mainWindow", "-"))
         self.label_5.setText(_translate("mainWindow", "= 0"))
 
-        self.lineEdit.textChanged.connect(self.line_edit_text_changed1)
-        self.lineEdit_2.textChanged.connect(self.line_edit_text_changed2)
-        self.lineEdit_3.textChanged.connect(self.line_edit_text_changed3)
-        self.lineEdit_4.textChanged.connect(self.line_edit_text_changed4)
-        self.lineEdit_5.textChanged.connect(self.line_edit_text_changed5)
-
-        self.pushButton_2.clicked.connect(self.sonuc)
-
     def line_edit_text_changed1(self,text1):
         try:
             print(float(text1))
+            self.pushButton_2.clicked.connect(self.sonuc)
         except Exception:
             if text1!="":
                 print("lütfen sayı girişi yapınız!")
@@ -186,7 +184,7 @@ class Ui_mainWindow(object):
     def line_edit_text_changed2(self,text2):
         try:
             print(float(text2))
-
+            self.pushButton_2.clicked.connect(self.sonuc)
         except Exception:
             if text2!="":
                 print("lütfen sayı girişi yapınız!")
@@ -194,6 +192,7 @@ class Ui_mainWindow(object):
     def line_edit_text_changed3(self,text3):
         try:
             print(float(text3))
+            self.pushButton_2.clicked.connect(self.sonuc)
         except Exception:
             if text3!= "":
                 print("lütfen sayı girişi yapınız!")
@@ -201,6 +200,7 @@ class Ui_mainWindow(object):
     def line_edit_text_changed4(self,text4):
         try:
             print(float(text4))
+            self.pushButton_2.clicked.connect(self.sonuc)
         except Exception:
             if text4!= "":
                 print("lütfen sayı girişi yapınız!")
@@ -208,23 +208,18 @@ class Ui_mainWindow(object):
     def line_edit_text_changed5(self,text5):
         try:
             print(float(text5))
+            self.pushButton_2.clicked.connect(self.sonuc)
         except Exception:
             if text5!= "":
                 print("lütfen sayı girişi yapınız!")
 
-
     def sonuc(self):
-
         denklem = self.lineEdit.text() + "*V\'\'\'" + self.comboBox.currentText()
         denklem += self.lineEdit_2.text() + "* V\'\'" + self.comboBox_2.currentText()
         denklem += self.lineEdit_3.text() + "* V\'" + self.comboBox_3.currentText()
         denklem += self.lineEdit_4.text() + "* V " + self.comboBox_4.currentText()
         denklem += self.lineEdit_5.text() + "=0"
-
-
         print(denklem)
-
-
 
 if __name__ == "__main__":
     import sys
