@@ -131,26 +131,21 @@ class Ui_mainWindow(object):
 
         self.retranslateUi(mainWindow)
         self.comboBox.setCurrentIndex(0)
-        self.pushButton_3.clicked.connect(self.lineEdit.clear)
+        self.pushButton_3.clicked.connect(self.lineEdit.clear)           #temizle butonuna tıklandığında çalışacak kısım
         self.pushButton_3.clicked.connect(self.lineEdit_2.clear)
         self.pushButton_3.clicked.connect(self.lineEdit_3.clear)
         self.pushButton_3.clicked.connect(self.lineEdit_4.clear)
         self.pushButton_3.clicked.connect(self.lineEdit_5.clear)
-        self.pushButton.clicked.connect(mainWindow.close)
+        self.pushButton.clicked.connect(mainWindow.close)       #çıkış butonuna yıklanıldığında algılayacak signal slotu
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
-
-        self.lineEdit.textChanged.connect(self.line_edit_text_changed1)
-        self.lineEdit_2.textChanged.connect(self.line_edit_text_changed2)
-        self.lineEdit_3.textChanged.connect(self.line_edit_text_changed3)
-        self.lineEdit_4.textChanged.connect(self.line_edit_text_changed4)
-        self.lineEdit_5.textChanged.connect(self.line_edit_text_changed5)
+        self.pushButton_2.clicked.connect(self.sonuc)
 
         self.lineEdit.setMaxLength(10)
         self.lineEdit_2.setMaxLength(10)
         self.lineEdit_3.setMaxLength(10)
         self.lineEdit_4.setMaxLength(10)
-        self.lineEdit_5.setMaxLength(10)
+        self.lineEdit_5.setMaxLength(10) #max girdi boyutunu belirledim
 
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -159,7 +154,7 @@ class Ui_mainWindow(object):
         self.pushButton_2.setText(_translate("mainWindow", "HESAPLA"))
         self.pushButton_3.setText(_translate("mainWindow", "TEMİZLE"))
         self.label.setText(_translate("mainWindow", "v\'\'\'"))
-        self.comboBox.setCurrentText(_translate("mainWindow", "+"))
+
         self.comboBox.setItemText(0, _translate("mainWindow", "+"))
         self.comboBox.setItemText(1, _translate("mainWindow", "-"))
         self.label_2.setText(_translate("mainWindow", "v\'\'"))
@@ -173,53 +168,77 @@ class Ui_mainWindow(object):
         self.comboBox_4.setItemText(1, _translate("mainWindow", "-"))
         self.label_5.setText(_translate("mainWindow", "= 0"))
 
-    def line_edit_text_changed1(self,text1):
-        try:
-            print(float(text1))
-            self.pushButton_2.clicked.connect(self.sonuc)
-        except Exception:
-            if text1!="":
-                print("lütfen sayı girişi yapınız!")
-
-    def line_edit_text_changed2(self,text2):
-        try:
-            print(float(text2))
-            self.pushButton_2.clicked.connect(self.sonuc)
-        except Exception:
-            if text2!="":
-                print("lütfen sayı girişi yapınız!")
-
-    def line_edit_text_changed3(self,text3):
-        try:
-            print(float(text3))
-            self.pushButton_2.clicked.connect(self.sonuc)
-        except Exception:
-            if text3!= "":
-                print("lütfen sayı girişi yapınız!")
-
-    def line_edit_text_changed4(self,text4):
-        try:
-            print(float(text4))
-            self.pushButton_2.clicked.connect(self.sonuc)
-        except Exception:
-            if text4!= "":
-                print("lütfen sayı girişi yapınız!")
-
-    def line_edit_text_changed5(self,text5):
-        try:
-            print(float(text5))
-            self.pushButton_2.clicked.connect(self.sonuc)
-        except Exception:
-            if text5!= "":
-                print("lütfen sayı girişi yapınız!")
-
     def sonuc(self):
-        denklem = self.lineEdit.text() + "*V\'\'\'" + self.comboBox.currentText()
-        denklem += self.lineEdit_2.text() + "* V\'\'" + self.comboBox_2.currentText()
-        denklem += self.lineEdit_3.text() + "* V\'" + self.comboBox_3.currentText()
-        denklem += self.lineEdit_4.text() + "* V " + self.comboBox_4.currentText()
-        denklem += self.lineEdit_5.text() + "=0"
-        print(denklem)
+        denklem = ""
+        if ((harfkontrol(self.lineEdit.text())) and (harfkontrol(self.lineEdit_2.text())) and (
+        harfkontrol(self.lineEdit_3.text())) and (harfkontrol(self.lineEdit_4.text())) and (
+        harfkontrol(self.lineEdit_5.text()))):
+            if (ilkkontrol(self.lineEdit.text())):
+                if ((isaretKontrol(self.lineEdit_2.text())) and (isaretKontrol(self.lineEdit_3.text())) and (
+                isaretKontrol(self.lineEdit_4.text())) and (isaretKontrol(self.lineEdit_5.text()))):
+                    if (len(self.lineEdit.text()) != 0):
+                        denklem = self.lineEdit.text() + "*V\'\'\' "
+                    if (len(self.lineEdit_2.text()) != 0):
+                        denklem += self.comboBox.currentText() + " " + self.lineEdit_2.text() + "*V\'\' "
+                    if (len(self.lineEdit_3.text()) != 0):
+                        denklem += self.comboBox_2.currentText() + " " + self.lineEdit_3.text() + "*V\' "
+                    if (len(self.lineEdit_4.text()) != 0):
+                        denklem += self.comboBox_3.currentText() + " " + self.lineEdit_4.text() + "*V "
+                    if (len(self.lineEdit_5.text()) != 0):
+                        denklem += self.comboBox_4.currentText() + " " + self.lineEdit_5.text()
+                    if ((len(self.lineEdit.text()) == 0) and (len(self.lineEdit_2.text()) == 0) and (
+                        len(self.lineEdit_3.text()) == 0) and (len(self.lineEdit_4.text()) == 0) and (len(self.lineEdit_5.text()) != 0)):
+                        denklem += " = " + self.comboBox_4.currentText() + self.lineEdit_5.text()
+                    else:
+                        denklem += " = 0"
+                    if ((len(self.lineEdit.text()) == 0) and (len(self.lineEdit_2.text()) == 0) and (
+                        len(self.lineEdit_3.text()) == 0) and (len(self.lineEdit_4.text()) == 0) and (len(self.lineEdit_5.text()) == 0)):
+                        denklem = ""
+                    if(len(denklem) != 0):
+                        print(denklem)
+
+
+def isaretKontrol(test):
+    durum = True
+    for i in range(0, len(test)):
+        if (test[i] == "-" or test[i] == "+"):
+            durum = False
+            break
+    return durum
+
+
+def ilkkontrol(test):
+    durum = True
+    for i in range(1, len(test)):
+        if (test[i] == "-" or test[i] == "+"):
+            durum = False
+            break;
+    return durum
+
+
+def harfkontrol(test):
+    durum = True
+    sayilar = "+-.0123456789"
+    noktasay = 0
+    for i in range(0, len(test)):
+        for j in range(0, len(sayilar)):
+            if(test[i] == "."):
+                noktasay = noktasay + 1
+                if(noktasay <= 1):
+                    break
+                elif(noktasay == 2):
+                    durum = False
+                    break
+            if (test[i] == sayilar[j]):
+                break
+            elif ((test[i] != sayilar[j]) and (j == (len(sayilar)) - 1)):
+                durum = False
+                break
+            elif (test[i] != sayilar[j]):
+                continue
+        if (not durum):
+            break
+    return durum
 
 if __name__ == "__main__":
     import sys
