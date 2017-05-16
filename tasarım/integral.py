@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from sympy import *
 
-""" I1 = (Vi1-Vx)/R1 = Vi1/R1 dir.(Vx = = olduğu için)
+""" I1 = (Vi1-Vx)/R1 = Vi1/R1 dir.(Vx = 0 olduğu için)
     x noktasındaki akımlar için düğüm denklemini yazacak olursak, KCL den;
     If-I1 = 0 ise If = I1 ve bu durumda If = Vi1/R1 olur.
     Vout = -(1/Cf)*[t-0 aralığında integral(If*dt)] = -(1/Cf)*[t-0 aralığında integral((Vi1/R1)*dt)] olur.
     Bunun sonucu olarak da;
 
-    Vout = -(1/R1*Cf)*[t-0 aralığında integral(Vi1*dt)] bulunur. """
+    Vout = -(1/R1*Cf)*[t-0] aralığında integral(Vi1*dt)] bulunur. """
 
 def integral():
    Vin1 = symbols('V1')
