@@ -128,15 +128,25 @@ def integral_alan(tosbaga):
 
     tosbaga.penup()
     tosbaga.setposition(konum[0]+67, konum[1]-10)
-    tosbaga.pendown
+    tosbaga.pendown()
     tosbaga.write("+", font=("arial",14,"bold"))
     tosbaga.penup()
     tosbaga.setposition(konum[0]+69, konum[1]-30)
-    tosbaga.pendown
+    tosbaga.pendown()
     tosbaga.write("-", font=("arial", 14, "bold"))
     tosbaga.penup()
+    tosbaga.setposition(konum[0] + 15, konum[1] + 10)
+    tosbaga.pendown()
+    tosbaga.write("R", font=("arial", 14, "bold"))
+
+    tosbaga.penup()
+    tosbaga.setposition(konum[0] + 81, konum[1] + 75)
+    tosbaga.pendown()
+    tosbaga.write("C", font=("arial", 14, "bold"))
+
+    tosbaga.penup()
     tosbaga.setposition(konum[0]+170,konum[1]-10)
-    tosbaga.pendown
+    tosbaga.pendown()
 
     konum[0] = konum[0]+169
     konum[1] = konum[1]-10
@@ -169,20 +179,39 @@ def toplayici(tosbaga):
 
     tosbaga.penup()
     tosbaga.setposition(konum[0]+108, konum[1]-10)
-    tosbaga.pendown
+    tosbaga.pendown()
     tosbaga.write("+", font=("arial", 14, "bold"))
+
     tosbaga.penup()
     tosbaga.setposition(konum[0]+109, konum[1]-30)
-    tosbaga.pendown
+    tosbaga.pendown()
     tosbaga.write("-", font=("arial", 14, "bold"))
+
+    tosbaga.penup()
+    tosbaga.setposition(konum[0] + 105, konum[1] + 60)
+    tosbaga.pendown()
+    tosbaga.write("R", font=("arial", 14, "bold"))
+
+    tosbaga.penup()
+    tosbaga.setposition(konum[0] + 15, konum[1] + 10)
+    tosbaga.pendown()
+
+    knm1 = konum[1] + 10
+    for i in range(size+1):
+        tosbaga.penup()
+        tosbaga.setposition(konum[0] + 15, knm1)
+        tosbaga.pendown()
+        tosbaga.write("R", font=("arial", 14, "bold"))
+        knm1 = knm1 - 50
+
     tosbaga.penup()
     tosbaga.setposition(konum[0] + 233,konum[1] - 10)
-    tosbaga.pendown
+    tosbaga.pendown()
 
     konum[0] = konum[0] + 232
     konum[1] = konum[1] - 10
 
 toplayici(tosbaga)
-integral_alan(tosbaga)
+#integral_alan(tosbaga)
 
 wn.mainloop()
