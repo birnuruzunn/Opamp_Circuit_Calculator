@@ -9,6 +9,8 @@ tosbaga.color("white")
 tosbaga.pensize(2)
 tosbaga.speed(2)
 
+konum = [-300, 150]
+
 def direnc():
     tosbaga.forward(10)
     tosbaga.left(60)
@@ -65,10 +67,10 @@ def gnd():
     tosbaga.forward(5)
 
 def geribes1():
+    global konum
     tosbaga.penup()
-    tosbaga.setposition(-256, 120)
+    tosbaga.setposition(konum[0] + 41,konum[1])
     tosbaga.right(180)
-    direnc()
     tosbaga.pendown()
     tosbaga.left(90)
     tosbaga.forward(60)
@@ -96,10 +98,11 @@ def geribes1():
     tosbaga.forward(20)
     tosbaga.backward(60)
     tosbaga.right(180)
-    print(tosbaga.position())
+
 def geribes2():
+    global konum
     tosbaga.penup()
-    tosbaga.setposition(-214.69, 119.63)
+    tosbaga.setposition(konum[0] + 41,konum[1])
     tosbaga.pendown()
     tosbaga.right(90)
     tosbaga.forward(50)
@@ -115,8 +118,9 @@ def geribes2():
     tosbaga.right(180)
 
 def integral_alan(tosbaga):
+    global konum
     tosbaga.penup()
-    tosbaga.setposition(-256, 120)
+    tosbaga.setposition(konum[0],konum[1])
     tosbaga.pendown()
     direnc()
     opamp()
@@ -124,35 +128,38 @@ def integral_alan(tosbaga):
     geribes1()
 
     tosbaga.penup()
-    tosbaga.setposition(-190.69, 110.63)
+    tosbaga.setposition(konum[0]+67, konum[1]-10)
     tosbaga.pendown
     tosbaga.write("+", font=("arial",14,"bold"))
     tosbaga.penup()
-    tosbaga.setposition(-187.69, 90.63)
+    tosbaga.setposition(konum[0]+69, konum[1]-30)
     tosbaga.pendown
     tosbaga.write("-", font=("arial", 14, "bold"))
     tosbaga.penup()
-    tosbaga.setposition(-84.69,109.63)
+    tosbaga.setposition(konum[0]+170,konum[1]-10)
     tosbaga.pendown
 
-#integral_alan(tosbaga)
+    konum[0] = konum[0]+169
+    konum[1] = konum[1]-10
 
 size = 2
 def toplayici(tosbaga):
+    global konum
     tosbaga.penup()
-    tosbaga.setposition(-256, 120)
+    tosbaga.setposition(konum[0],konum[1])
     tosbaga.pendown()
     direnc()
 
-    knm = 70
+    knm = konum[1]-50
     for i in range(size):
         tosbaga.penup()
-        tosbaga.setx(-256)
+        tosbaga.setx(konum[0])
         tosbaga.sety(knm)
         tosbaga.pendown()
         direnc()
-        knm=knm-50
+        knm = knm-50
     tosbaga.left(90)
+
     for i in range(size):
         tosbaga.forward(50)
     tosbaga.right(90)
@@ -162,18 +169,21 @@ def toplayici(tosbaga):
     geribes2()
 
     tosbaga.penup()
-    tosbaga.setposition(-150.69, 110.63)
+    tosbaga.setposition(konum[0]+108, konum[1]-10)
     tosbaga.pendown
     tosbaga.write("+", font=("arial", 14, "bold"))
     tosbaga.penup()
-    tosbaga.setposition(-147.69, 90.63)
+    tosbaga.setposition(konum[0]+109, konum[1]-30)
     tosbaga.pendown
     tosbaga.write("-", font=("arial", 14, "bold"))
     tosbaga.penup()
-    tosbaga.setposition(-23.38,109.26)
+    tosbaga.setposition(konum[0] + 233,konum[1] - 10)
     tosbaga.pendown
 
-toplayici(tosbaga)
+    konum[0] = konum[0] + 232
+    konum[1] = konum[1] - 10
 
+toplayici(tosbaga)
+integral_alan(tosbaga)
 
 wn.mainloop()
