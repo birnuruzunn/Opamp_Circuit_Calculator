@@ -82,7 +82,6 @@ def geribes1():
     tosbaga.forward(10)
 
     tosbaga.penup()
-    tosbaga.position()
     tosbaga.right(90)
     tosbaga.forward(10)
     tosbaga.pendown()
@@ -104,10 +103,10 @@ def geribes2():
     tosbaga.penup()
     tosbaga.setposition(konum[0] + 41,konum[1])
     tosbaga.pendown()
-    tosbaga.right(90)
-    tosbaga.forward(50)
-    tosbaga.right(90)
-    tosbaga.forward(50)
+
+    for i in range(2):
+        tosbaga.right(90)
+        tosbaga.forward(50)
     direnc()
     tosbaga.forward(50)
     tosbaga.right(90)
