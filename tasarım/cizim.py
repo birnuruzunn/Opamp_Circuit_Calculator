@@ -1,6 +1,7 @@
 import turtle
 
 wn = turtle.Screen()
+wn.screensize(1000,1000)
 wn.bgcolor("black")
 wn.title("integral_alıcı")
 
@@ -211,7 +212,9 @@ def toplayici(tosbaga):
     konum[0] = konum[0] + 232
     konum[1] = konum[1] - 10
 
-toplayici(tosbaga)
-#integral_alan(tosbaga)
 
+integral_alan(tosbaga)
+integral_alan(tosbaga)
+integral_alan(tosbaga)
+toplayici(tosbaga)
 wn.mainloop()
