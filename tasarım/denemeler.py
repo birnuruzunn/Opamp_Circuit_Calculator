@@ -9,6 +9,18 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from sympy import *
 import integral as t
+import cizim
+import turtle
+
+wn = turtle.Screen()
+wn.screensize(1000,1000)
+wn.bgcolor("black")
+wn.title("integral_alıcı")
+
+tosbaga = turtle.Turtle()  # kaplumbağa oluşturduk
+tosbaga.color("white")
+tosbaga.pensize(2)
+tosbaga.speed(15)
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
@@ -233,7 +245,36 @@ class Ui_mainWindow(object):
                         (len(self.lineEdit_5.text()) == 0)):
                         denklem = ""
                     if (len(denklem) != 0):
-                        print(denklem )
+                        print(denklem)
+        cizim.integral_alan(tosbaga)
+        cizim.integral_alan(tosbaga)
+        cizim.integral_alan(tosbaga)
+        cizim.toplayici(tosbaga)
+        if ((harfkontrol(self.lineEdit.text())) and (harfkontrol(self.lineEdit_2.text())) and (
+                harfkontrol(self.lineEdit_3.text())) and (harfkontrol(self.lineEdit_4.text())) and (
+                harfkontrol(self.lineEdit_5.text()))):
+            if (ilkkontrol(self.lineEdit.text())):
+                if ((isaretKontrol(self.lineEdit_2.text())) and (isaretKontrol(self.lineEdit_3.text())) and (
+                        isaretKontrol(self.lineEdit_4.text())) and (isaretKontrol(self.lineEdit_5.text()))):
+                    if ((len(self.lineEdit.text()) != 0) and (self.lineEdit.text() != "0")):
+                        cizim.konum = [-400, 100]
+                        #çıkışa bağlancak
+                        if(len(self.lineEdit_2.text())!= 0):
+                            tosbaga.penup()
+                            tosbaga.setposition(cizim.konum[0] + 131, cizim.konum[1])
+                            tosbaga.pendown()
+                            tosbaga.right(90)
+                            tosbaga.forward(250)
+                            tosbaga.left(90)
+                            tosbaga.forward(100)
+
+                        tosbaga.penup()
+                        cizim.konum = [-170, -150]
+                        tosbaga.pendown()
+                        cizim.toplayici(tosbaga)
+
+        wn.mainloop()
+
 
 def isaretKontrol(test):
     durum = True
@@ -243,7 +284,6 @@ def isaretKontrol(test):
             break
     return durum
 
-
 def ilkkontrol(test):
     durum = True
     for i in range(1, len(test)):
@@ -251,7 +291,6 @@ def ilkkontrol(test):
             durum = False
             break;
     return durum
-
 
 def harfkontrol(test):
     durum = True
