@@ -26,6 +26,4 @@ def integral():
 
    kazanc = simplify(1/(R*C))
 
-   print("k = {}".format(kazanc))
-
-integral()
+   return kazanc

@@ -171,6 +171,7 @@ class Ui_mainWindow(object):
 
     def sonuc(self,mainWindow):
         denklem = ""
+
         if ((harfkontrol(self.lineEdit.text())) and (harfkontrol(self.lineEdit_2.text())) and (
         harfkontrol(self.lineEdit_3.text())) and (harfkontrol(self.lineEdit_4.text())) and (
         harfkontrol(self.lineEdit_5.text()))):
@@ -178,15 +179,18 @@ class Ui_mainWindow(object):
                 if ((isaretKontrol(self.lineEdit_2.text())) and (isaretKontrol(self.lineEdit_3.text())) and (
                 isaretKontrol(self.lineEdit_4.text())) and (isaretKontrol(self.lineEdit_5.text()))):
                     if (len(self.lineEdit.text()) != 0):
-                        denklem = self.lineEdit.text() + "*V\'\'\' "
+                        denklem = "V\'\'\' "
                     if (len(self.lineEdit_2.text()) != 0):
-                        denklem += self.comboBox.currentText() + " " + self.lineEdit_2.text() + "*V\'\' "
+                        denklem += (self.comboBox.currentText() +" "+"("+ self.lineEdit_2.text()) +"/"+ (self.lineEdit.text())\
+                                   +")"+ "*V\'\' "
                     if (len(self.lineEdit_3.text()) != 0):
-                        denklem += self.comboBox_2.currentText() + " " + self.lineEdit_3.text() + "*V\' "
+                        denklem += (self.comboBox_2.currentText() +" "+"("+ self.lineEdit_3.text()) +"/"+ (self.lineEdit.text()) \
+                                   +")"+ "*V\' "
                     if (len(self.lineEdit_4.text()) != 0):
-                        denklem += self.comboBox_3.currentText() + " " + self.lineEdit_4.text() + "*V "
+                        denklem += (self.comboBox_3.currentText() +" "+"("+ self.lineEdit_4.text()) +"/"+ (self.lineEdit.text()) \
+                                   +")"+ "*V "
                     if (len(self.lineEdit_5.text()) != 0):
-                        denklem += self.comboBox_4.currentText() + " " + self.lineEdit_5.text()
+                        denklem += (self.comboBox_4.currentText() +" "+"(" + self.lineEdit_5.text()) +"/"+ (self.lineEdit.text())+")"
                     if ((len(self.lineEdit.text()) == 0) and (len(self.lineEdit_2.text()) == 0) and (
                         len(self.lineEdit_3.text()) == 0) and (len(self.lineEdit_4.text()) == 0) and (len(self.lineEdit_5.text()) != 0)):
                         denklem += " = " + self.comboBox_4.currentText() + self.lineEdit_5.text()
@@ -198,6 +202,7 @@ class Ui_mainWindow(object):
                     if(len(denklem) != 0):
                         print(denklem)
 
+
         if ((harfkontrol(self.lineEdit.text())) and (harfkontrol(self.lineEdit_2.text())) and (
         harfkontrol(self.lineEdit_3.text())) and (harfkontrol(self.lineEdit_4.text())) and (
         harfkontrol(self.lineEdit_5.text()))):
@@ -205,15 +210,18 @@ class Ui_mainWindow(object):
                 if ((isaretKontrol(self.lineEdit_2.text())) and (isaretKontrol(self.lineEdit_3.text())) and (
                 isaretKontrol(self.lineEdit_4.text())) and (isaretKontrol(self.lineEdit_5.text()))):
                     if ((len(self.lineEdit.text()) != 0) and (self.lineEdit.text()!= "0")):
-                        denklem = self.lineEdit.text() + "*V\'\'\' " + " = -("
+                        denklem = "V\'\'\' " + " = -("
                         if (len(self.lineEdit_2.text()) != 0):
-                            denklem += self.comboBox.currentText()+ " "  +self.lineEdit_2.text() + "*V\'\' "
+                            denklem += (self.comboBox.currentText()+" "+"("+self.lineEdit_2.text())+"/"+(self.lineEdit.text())\
+                                       +")"+ "*V\'\' "
                         if (len(self.lineEdit_3.text()) != 0):
-                            denklem += self.comboBox_2.currentText() + " " + self.lineEdit_3.text() + "*V\' "
+                            denklem += (self.comboBox_2.currentText()+" "+"("+self.lineEdit_3.text())+"/"+(self.lineEdit.text())\
+                                       + ")"+ "*V\' "
                         if (len(self.lineEdit_4.text()) != 0):
-                            denklem += self.comboBox_3.currentText() + " " + self.lineEdit_4.text() + "*V "
+                            denklem += (self.comboBox_3.currentText() +" "+"("+self.lineEdit_4.text())+"/"+(self.lineEdit.text())\
+                                       + ")"+ "*V "
                         if (len(self.lineEdit_5.text()) != 0):
-                            denklem += self.comboBox_4.currentText() + " " + self.lineEdit_5.text()
+                            denklem += (self.comboBox_4.currentText() +" "+"("+self.lineEdit_5.text())+"/"+(self.lineEdit.text())+")"
                         denklem += ")"
 
                     else:
