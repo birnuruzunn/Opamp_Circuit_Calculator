@@ -210,23 +210,21 @@ class Ui_mainWindow(object):
                 if ((isaretKontrol(self.lineEdit_2.text())) and (isaretKontrol(self.lineEdit_3.text())) and (
                 isaretKontrol(self.lineEdit_4.text())) and (isaretKontrol(self.lineEdit_5.text()))):
                     if ((len(self.lineEdit.text()) != 0) and (self.lineEdit.text()!= "0")):
-                        denklem = "V\'\'\' " + " = -("
+                        denklem = "V\'\'\' = "
                         if (len(self.lineEdit_2.text()) != 0):
-                            denklem += (self.comboBox.currentText()+" "+"("+self.lineEdit_2.text())+"/"+(self.lineEdit.text())\
-                                       +")"+ "*V\'\' "
+                            denklem += (("+" if self.comboBox.currentIndex() == 1  else "-")+" "+"("+self.lineEdit_2.text())+"/"+(self.lineEdit.text())\
+                                       +")"+ "*({})".format(t.integral(1)) + "*V\'\' "
                         if (len(self.lineEdit_3.text()) != 0):
-                            denklem += (self.comboBox_2.currentText()+" "+"("+self.lineEdit_3.text())+"/"+(self.lineEdit.text())\
-                                       + ")"+ "*V\' "
+                            denklem += (("+" if self.comboBox_2.currentIndex() == 1  else "-")+" "+"("+self.lineEdit_3.text())+"/"+(self.lineEdit.text())\
+                                       + ")"+ "*({})".format(t.integral(2)) + "*V\' "
                         if (len(self.lineEdit_4.text()) != 0):
-                            denklem += (self.comboBox_3.currentText() +" "+"("+self.lineEdit_4.text())+"/"+(self.lineEdit.text())\
-                                       + ")"+ "*V "
+                            denklem += (("+" if self.comboBox_3.currentIndex() == 1  else "-") +" "+"("+self.lineEdit_4.text())+"/"+(self.lineEdit.text())\
+                                       + ")"+ "*({})".format(t.integral(3)) + "*V "
                         if (len(self.lineEdit_5.text()) != 0):
-                            denklem += (self.comboBox_4.currentText() +" "+"("+self.lineEdit_5.text())+"/"+(self.lineEdit.text())+")"
-                        denklem += ")"
-
+                            denklem += (("+" if self.comboBox_4.currentIndex() == 1  else "-")+" "+"("+self.lineEdit_5.text())+"/"+(self.lineEdit.text())+")"
                     else:
                         if(self.lineEdit.text()!= "0"):
-                            denklem = self.lineEdit.text() + "V1\'\'\'"
+                            denklem = self.lineEdit.text() + "V\'\'\'"
                             denklem += " = 0"
 
 

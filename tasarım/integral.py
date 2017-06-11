@@ -9,7 +9,7 @@ from sympy import *
 
     Vout = -(1/R1*Cf)*[t-0] aralığında integral(Vi1*dt)] bulunur. """
 
-def integral():
+def integral(us):
 
    V = symbols('V')
    R = symbols('R')
@@ -24,6 +24,9 @@ def integral():
 
    Vout = -(1/(R*C))*Integral((V,(V, 0, 1))) # 0-1 aralığında integral hesabı yaptım
 
-   kazanc = simplify(1/(R*C))
-
+   kazanc = simplify( 1 / (pow(R,us) * pow(C,us)))
+   #print(kazanc)
    return kazanc
+
+
+
