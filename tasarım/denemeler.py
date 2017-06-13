@@ -250,7 +250,6 @@ class Ui_mainWindow(object):
         cizim.integral_alan(tosbaga)
         cizim.integral_alan(tosbaga)
         cizim.integral_alan(tosbaga)
-        cizim.toplayici(tosbaga)
         if ((harfkontrol(self.lineEdit.text())) and (harfkontrol(self.lineEdit_2.text())) and (
                 harfkontrol(self.lineEdit_3.text())) and (harfkontrol(self.lineEdit_4.text())) and (
                 harfkontrol(self.lineEdit_5.text()))):
@@ -258,8 +257,8 @@ class Ui_mainWindow(object):
                 if ((isaretKontrol(self.lineEdit_2.text())) and (isaretKontrol(self.lineEdit_3.text())) and (
                         isaretKontrol(self.lineEdit_4.text())) and (isaretKontrol(self.lineEdit_5.text()))):
                     if ((len(self.lineEdit.text()) != 0) and (self.lineEdit.text() != "0")):
-                        #çıkışa bağlancak
-                        if(len(self.lineEdit_2.text())!= 0) and (self.lineEdit_2.text() != "0"):
+
+                        if((len(self.lineEdit_2.text())!= 0) and (self.lineEdit_2.text() != "0")):
                             if (self.comboBox.currentIndex() == 0):
                                 cizim.konum = [-400, 100]
                                 tosbaga.penup()
@@ -389,7 +388,174 @@ class Ui_mainWindow(object):
                                         if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
                                             if (self.comboBox_4.currentIndex() == 1):
                                                 tosbaga.penup()
+                                                cizim.konum = [-170, -195]
+                                                tosbaga.pendown()
+                                                if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                    if (self.comboBox_2.currentIndex() == 0):
+                                                        cizim.size = 1
+                                                    else:
+                                                        cizim.size = 2
+                                                else:
+                                                    cizim.size = 1
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(225)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(45)
+                                            else:
+                                                tosbaga.penup()
+                                                cizim.konum = [-170, -195]
+                                                tosbaga.pendown()
+                                                if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                    if (self.comboBox_2.currentIndex() == 0):
+                                                        cizim.size = 0
+                                                    else:
+                                                        cizim.size = 1
+                                                else:
+                                                    cizim.size = 0
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(225)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(45)
+                                        else:
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -195]
+                                            tosbaga.pendown()
+                                            if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                if (self.comboBox_2.currentIndex() == 0):
+                                                    cizim.size = 0
+                                                else:
+                                                    cizim.size = 1
+                                            else:
+                                                cizim.size = 0
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(225)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(45)
+                            else:
+                                if (len(self.lineEdit_4.text()) == 0) or (self.lineEdit_4.text() == "0"):
+                                    if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
+                                        if (self.comboBox_4.currentIndex() == 1):
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -145]
+                                            tosbaga.pendown()
+                                            if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                if (self.comboBox_2.currentIndex() == 0):
+                                                    cizim.size = 1
+                                                else:
+                                                    cizim.size = 2
+                                            else:
+                                                cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(225)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(45)
+                                        else:
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -195]
+                                            tosbaga.pendown()
+                                            if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                if (self.comboBox_2.currentIndex() == 0):
+                                                    cizim.size = 0
+                                                else:
+                                                    cizim.size = 1
+                                            else:
+                                                cizim.size = 0
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(225)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(45)
+                                    else:
+                                        tosbaga.penup()
+                                        cizim.konum = [-170, -195]
+                                        tosbaga.pendown()
+                                        if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                            if (self.comboBox_2.currentIndex() == 0):
+                                                cizim.size = 0
+                                            else:
+                                                cizim.size = 1
+                                        else:
+                                            cizim.size = 0
+                                        cizim.toplayici(tosbaga)
+                                        tosbaga.left(90)
+                                        tosbaga.forward(225)
+                                        tosbaga.right(90)
+                                        tosbaga.forward(45)
+                                else:
+                                    if(self.comboBox_3.currentIndex()==0):
+                                        if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
+                                            if (self.comboBox_4.currentIndex() == 1):
+                                                tosbaga.penup()
                                                 cizim.konum = [-170, -145]
+                                                tosbaga.pendown()
+                                                if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                    if (self.comboBox_2.currentIndex() == 0):
+                                                        cizim.size = 2
+                                                    else:
+                                                        cizim.size = 3
+                                                else:
+                                                    cizim.size = 2
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.forward(20)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(175)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(25)
+                                            else:
+                                                tosbaga.penup()
+                                                cizim.konum = [-170, -145]
+                                                tosbaga.pendown()
+                                                if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                    if (self.comboBox_2.currentIndex() == 0):
+                                                        cizim.size = 1
+                                                    else:
+                                                        cizim.size = 2
+                                                else:
+                                                    cizim.size = 1
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.forward(20)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(175)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(25)
+                                        else:
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -145]
+                                            tosbaga.pendown()
+                                            if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                if (self.comboBox_2.currentIndex() == 0):
+                                                    cizim.size = 1
+                                                else:
+                                                    cizim.size = 2
+                                            else:
+                                                cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.forward(20)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(175)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(25)
+                                        cizim.konum = [69, 70]
+                                        tosbaga.penup()
+                                        tosbaga.setposition(cizim.konum[0], cizim.konum[1])
+                                        tosbaga.pendown()
+                                        tosbaga.right(90)
+                                        tosbaga.forward(125)
+                                        tosbaga.right(90)
+                                        tosbaga.forward(255)
+                                        tosbaga.left(90)
+                                        tosbaga.forward(90)
+                                        tosbaga.left(90)
+                                        tosbaga.forward(20)
+                                    else:
+                                        if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
+                                            if (self.comboBox_4.currentIndex() == 1):
+                                                tosbaga.penup()
+                                                cizim.konum = [-170, -195]
                                                 tosbaga.pendown()
                                                 if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
                                                     if (self.comboBox_2.currentIndex() == 0):
@@ -453,7 +619,7 @@ class Ui_mainWindow(object):
                                             cizim.toplayici(tosbaga)
                                             tosbaga.forward(20)
                                             tosbaga.left(90)
-                                            tosbaga.forward(125)
+                                            tosbaga.forward(175)
                                             tosbaga.right(90)
                                             tosbaga.forward(25)
                                         else:
@@ -470,7 +636,7 @@ class Ui_mainWindow(object):
                                             cizim.toplayici(tosbaga)
                                             tosbaga.forward(20)
                                             tosbaga.left(90)
-                                            tosbaga.forward(125)
+                                            tosbaga.forward(175)
                                             tosbaga.right(90)
                                             tosbaga.forward(25)
                                     else:
@@ -487,7 +653,7 @@ class Ui_mainWindow(object):
                                         cizim.toplayici(tosbaga)
                                         tosbaga.forward(20)
                                         tosbaga.left(90)
-                                        tosbaga.forward(125)
+                                        tosbaga.forward(175)
                                         tosbaga.right(90)
                                         tosbaga.forward(25)
                                     cizim.konum = [69, 70]
@@ -576,6 +742,102 @@ class Ui_mainWindow(object):
                                 tosbaga.forward(230)
                                 tosbaga.left(90)
                                 tosbaga.forward(55)
+                    #***************************************************************************************************
+
+                        cizim.konum = [105, 70]
+                        if((len(self.lineEdit_2.text())!= 0) and (self.lineEdit_2.text() != "0")) or (
+                                    (len(self.lineEdit_4.text())!= 0) and (self.lineEdit_4.text() != "0")):
+                            if((self.comboBox.currentIndex()==0) or (self.comboBox_3.currentIndex()==0)):
+
+                                if((len(self.lineEdit_3.text())!= 0) and (self.lineEdit_3.text() != "0")):
+                                    if(self.comboBox_2.currentIndex()==0):
+
+                                        if ((len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0")):
+                                            if(self.comboBox_4.currentIndex() == 0):
+
+                                                cizim.size = 3
+                                                cizim.toplayici(tosbaga)
+                                            else:
+                                                cizim.size = 2
+                                                cizim.toplayici(tosbaga)
+                                        else:
+                                            cizim.size = 2
+                                            cizim.toplayici(tosbaga)
+                                    else:
+                                        if ((len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0")):
+                                            if(self.comboBox_4.currentIndex() == 0):
+
+                                                cizim.size = 2
+                                                cizim.toplayici(tosbaga)
+                                            else:
+                                                cizim.size = 1
+                                                cizim.toplayici(tosbaga)
+                                        else:
+                                            cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                                else:
+                                    if ((len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0")):
+                                        if (self.comboBox_4.currentIndex() == 0):
+
+                                            cizim.size = 2
+                                            cizim.toplayici(tosbaga)
+                                        else:
+                                            cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                                    else:
+                                        cizim.size = 1
+                                        cizim.toplayici(tosbaga)
+                            else:
+                                if ((len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0")):
+                                    if (self.comboBox_2.currentIndex() == 0):
+
+                                        if ((len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0")):
+                                            if (self.comboBox_4.currentIndex() == 0):
+
+                                                cizim.size = 2
+                                                cizim.toplayici(tosbaga)
+                                            else:
+                                                cizim.size = 1
+                                                cizim.toplayici(tosbaga)
+                                        else:
+                                            cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                                    else:
+                                        if ((len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0")):
+                                            if (self.comboBox_4.currentIndex() == 0):
+
+                                                cizim.size = 2
+                                                cizim.toplayici(tosbaga)
+                                            else:
+                                                cizim.size = 1
+                                                cizim.toplayici(tosbaga)
+                                        else:
+                                            cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                        else:
+                            if ((len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0")):
+                                if (self.comboBox_4.currentIndex() == 0):
+
+                                    cizim.size = 1
+                                    cizim.toplayici(tosbaga)
+                                else:
+                                    cizim.size = 0
+                                    cizim.toplayici(tosbaga)
+                            else:
+                                cizim.size = 0
+                                cizim.toplayici(tosbaga)
+
+                        cizim.konum =[-400, 100]
+                        tosbaga.penup()
+                        tosbaga.setposition(cizim.konum[0], cizim.konum[1])
+                        tosbaga.pendown()
+                        tosbaga.right(90)
+                        tosbaga.forward(370)
+                        tosbaga.left(90)
+                        tosbaga.forward(737)
+                        tosbaga.left(90)
+                        tosbaga.forward(330)
+
 
         wn.mainloop()
 #-----------------------------------------------------------------------------------------------------------------------

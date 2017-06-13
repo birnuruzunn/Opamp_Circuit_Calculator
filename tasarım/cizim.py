@@ -142,7 +142,6 @@ def integral_alan(tosbaga):
     konum[0] = konum[0]+169
     konum[1] = konum[1]-10
 
-size = 2
 def toplayici(tosbaga):
     global konum
     tosbaga.penup()
