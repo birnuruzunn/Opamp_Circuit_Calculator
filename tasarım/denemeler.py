@@ -245,7 +245,7 @@ class Ui_mainWindow(object):
                         denklem = ""
                     if (len(denklem) != 0):
                         print(denklem)
-
+#------------------------------------------------------------------------------bu kısımda çizim yaptırdım---------------
         cizim.integral_alan(tosbaga)
         cizim.integral_alan(tosbaga)
         cizim.integral_alan(tosbaga)
@@ -265,7 +265,7 @@ class Ui_mainWindow(object):
                                 tosbaga.setposition(cizim.konum[0] + 131, cizim.konum[1])
                                 tosbaga.pendown()
                                 tosbaga.right(90)
-                                tosbaga.forward(245)
+                                tosbaga.forward(295)
                                 tosbaga.left(90)
                                 tosbaga.forward(100)
                                 if (len(self.lineEdit_4.text()) == 0) or (self.lineEdit_4.text() == "0"):
@@ -282,7 +282,7 @@ class Ui_mainWindow(object):
                                             tosbaga.forward(45)
                                         else:
                                             tosbaga.penup()
-                                            cizim.konum = [-170, -145]
+                                            cizim.konum = [-170, -195]
                                             tosbaga.pendown()
                                             cizim.size = 0
                                             cizim.toplayici(tosbaga)
@@ -292,7 +292,7 @@ class Ui_mainWindow(object):
                                             tosbaga.forward(45)
                                     else:
                                         tosbaga.penup()
-                                        cizim.konum = [-170, -145]
+                                        cizim.konum = [-170, -195]
                                         tosbaga.pendown()
                                         cizim.size = 0
                                         cizim.toplayici(tosbaga)
@@ -301,10 +301,93 @@ class Ui_mainWindow(object):
                                         tosbaga.right(90)
                                         tosbaga.forward(45)
                                 else:
+                                    if(self.comboBox_3.currentIndex()==0):
+                                        if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
+                                            if (self.comboBox_4.currentIndex() == 1):
+                                                tosbaga.penup()
+                                                cizim.konum = [-170, -145]
+                                                tosbaga.pendown()
+                                                cizim.size = 2
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.forward(20)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(125)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(25)
+                                            else:
+                                                tosbaga.penup()
+                                                cizim.konum = [-170, -145]
+                                                tosbaga.pendown()
+                                                cizim.size = 1
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.forward(20)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(125)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(25)
+                                        else:
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -145]
+                                            tosbaga.pendown()
+                                            cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.forward(20)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(125)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(25)
+                                        cizim.konum = [69, 70]
+                                        tosbaga.penup()
+                                        tosbaga.setposition(cizim.konum[0], cizim.konum[1])
+                                        tosbaga.pendown()
+                                        tosbaga.right(90)
+                                        tosbaga.forward(125)
+                                        tosbaga.right(90)
+                                        tosbaga.forward(255)
+                                        tosbaga.left(90)
+                                        tosbaga.forward(90)
+                                        tosbaga.left(90)
+                                        tosbaga.forward(20)
+                                    else:
+                                        if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
+                                            if (self.comboBox_4.currentIndex() == 1):
+                                                tosbaga.penup()
+                                                cizim.konum = [-170, -145]
+                                                tosbaga.pendown()
+                                                cizim.size = 1
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(175)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(45)
+                                            else:
+                                                tosbaga.penup()
+                                                cizim.konum = [-170, -195]
+                                                tosbaga.pendown()
+                                                cizim.size = 0
+                                                cizim.toplayici(tosbaga)
+                                                tosbaga.left(90)
+                                                tosbaga.forward(175)
+                                                tosbaga.right(90)
+                                                tosbaga.forward(45)
+                                        else:
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -195]
+                                            tosbaga.pendown()
+                                            cizim.size = 0
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(175)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(45)
+
+                        else:
+                            if (len(self.lineEdit_4.text()) != 0) and (self.lineEdit_4.text() != "0"):
+                                if(self.comboBox_3.currentIndex()==0):
                                     if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
                                         if (self.comboBox_4.currentIndex() == 1):
                                             tosbaga.penup()
-                                            cizim.konum = [-170, -95]
+                                            cizim.konum = [-170, -145]
                                             tosbaga.pendown()
                                             cizim.size = 2
                                             cizim.toplayici(tosbaga)
@@ -315,7 +398,7 @@ class Ui_mainWindow(object):
                                             tosbaga.forward(25)
                                         else:
                                             tosbaga.penup()
-                                            cizim.konum = [-170, -95]
+                                            cizim.konum = [-170, -145]
                                             tosbaga.pendown()
                                             cizim.size = 1
                                             cizim.toplayici(tosbaga)
@@ -326,7 +409,7 @@ class Ui_mainWindow(object):
                                             tosbaga.forward(25)
                                     else:
                                         tosbaga.penup()
-                                        cizim.konum = [-170, -95]
+                                        cizim.konum = [-170, -145]
                                         tosbaga.pendown()
                                         cizim.size = 1
                                         cizim.toplayici(tosbaga)
@@ -340,64 +423,65 @@ class Ui_mainWindow(object):
                                     tosbaga.setposition(cizim.konum[0], cizim.konum[1])
                                     tosbaga.pendown()
                                     tosbaga.right(90)
-                                    tosbaga.forward(75)
+                                    tosbaga.forward(125)
                                     tosbaga.right(90)
                                     tosbaga.forward(255)
                                     tosbaga.left(90)
                                     tosbaga.forward(90)
                                     tosbaga.left(90)
                                     tosbaga.forward(20)
-                        else:
-                            if (len(self.lineEdit_4.text()) != 0) and (self.lineEdit_4.text() != "0"):
-                                if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
-                                    if (self.comboBox_4.currentIndex() == 1):
-                                        tosbaga.penup()
-                                        cizim.konum = [-170, -95]
-                                        tosbaga.pendown()
-                                        cizim.size = 2
-                                        cizim.toplayici(tosbaga)
-                                        tosbaga.forward(20)
-                                        tosbaga.left(90)
-                                        tosbaga.forward(125)
-                                        tosbaga.right(90)
-                                        tosbaga.forward(25)
+                                else:
+                                    if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
+                                        if (self.comboBox_4.currentIndex() == 1):
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -145]
+                                            tosbaga.pendown()
+                                            cizim.size = 1
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(175)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(45)
+                                        else:
+                                            tosbaga.penup()
+                                            cizim.konum = [-170, -195]
+                                            tosbaga.pendown()
+                                            cizim.size = 0
+                                            cizim.toplayici(tosbaga)
+                                            tosbaga.left(90)
+                                            tosbaga.forward(175)
+                                            tosbaga.right(90)
+                                            tosbaga.forward(45)
                                     else:
                                         tosbaga.penup()
-                                        cizim.konum = [-170, -95]
+                                        cizim.konum = [-170, -195]
                                         tosbaga.pendown()
-                                        cizim.size = 1
+                                        cizim.size = 0
                                         cizim.toplayici(tosbaga)
-                                        tosbaga.forward(20)
                                         tosbaga.left(90)
-                                        tosbaga.forward(125)
+                                        tosbaga.forward(175)
                                         tosbaga.right(90)
-                                        tosbaga.forward(25)
-                                else:
-                                    tosbaga.penup()
-                                    cizim.konum = [-170, -95]
-                                    tosbaga.pendown()
-                                    cizim.size = 1
-                                    cizim.toplayici(tosbaga)
-                                    tosbaga.forward(20)
-                                    tosbaga.left(90)
-                                    tosbaga.forward(125)
-                                    tosbaga.right(90)
-                                    tosbaga.forward(25)
-                                cizim.konum = [69, 70]
+                                        tosbaga.forward(45)
+
+                        """if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                            if (self.comboBox_2.currentIndex() == 0):
+                                cizim.konum = [-100, 80]
                                 tosbaga.penup()
                                 tosbaga.setposition(cizim.konum[0], cizim.konum[1])
                                 tosbaga.pendown()
                                 tosbaga.right(90)
-                                tosbaga.forward(75)
+                                tosbaga.forward(95)
+                                tosbaga.left(90)
+                                tosbaga.forward(183)
+                                tosbaga.left(90)
+                                tosbaga.forward(35)
                                 tosbaga.right(90)
-                                tosbaga.forward(255)
-                                tosbaga.left(90)
-                                tosbaga.forward(90)
-                                tosbaga.left(90)
-                                tosbaga.forward(20)
+                                tosbaga.forward(23)"""
+
+
 
         wn.mainloop()
-
+#-----------------------------------------------------------------------------------------------------------------------
 
 def isaretKontrol(test):
     durum = True
