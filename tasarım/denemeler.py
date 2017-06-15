@@ -914,11 +914,11 @@ class Ui_mainWindow(object):
                             tosbaga.setposition(cizim.konum[0], cizim.konum[1])
                             tosbaga.pendown()
                             tosbaga.right(90)
-                            tosbaga.forward(370)
+                            tosbaga.forward(420)
                             tosbaga.left(90)
                             tosbaga.forward(737)
                             tosbaga.left(90)
-                            tosbaga.forward(330)
+                            tosbaga.forward(380)
 
         wn.mainloop()
 #------------------------------------------------------------------------------------------------------------------------------
