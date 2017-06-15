@@ -202,3 +202,4 @@ def toplayici(tosbaga):
     konum[1] = konum[1] - 10
 
 
+

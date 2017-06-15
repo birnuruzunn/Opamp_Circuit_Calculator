@@ -11,18 +11,20 @@ from sympy import *
 import integral as t
 import cizim
 import turtle
-
+#--------------------------------------------------------------------------------çizim için setleme----------------------------
 wn = turtle.Screen()
-wn.screensize(1000,1000)
 wn.bgcolor("black")
 wn.title("integral_alıcı")
+#tam ekran yapmak için
+wn.screensize(1000,1000)
+wn.setup(width=1.0, height=1.0, startx=None, starty=None) #tam ekran yapmak için
 
 tosbaga = turtle.Turtle()  # kaplumbağa oluşturduk
 tosbaga.color("white")
 tosbaga.pensize(2)
-tosbaga.speed(10) #0-10 arası değer alır aksi taktirde 0 kabul edilir.
+tosbaga.speed(20) #0-10 arası değer alır aksi taktirde 0 kabul edilir.
 tosbaga.hideturtle() #tosbagayı gizledim
-
+#------------------------------------------------------------------------------------------------------------------------------
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
@@ -239,16 +241,13 @@ class Ui_mainWindow(object):
                             denklem = self.lineEdit.text() + "V\'\'\'"
                             denklem += " = 0"
 
-
                     if ((len(self.lineEdit.text()) == 0) and (len(self.lineEdit_2.text()) == 0) and
                         (len(self.lineEdit_3.text()) == 0) and (len(self.lineEdit_4.text()) == 0) and
                         (len(self.lineEdit_5.text()) == 0)):
                         denklem = ""
                     if (len(denklem) != 0):
                         print(denklem)
-
-#------------------------------------------------------------------------------bu kısımda çizim yaptırdım---------------
-
+#-------------------------------------------------------------------------------kulanıcı girişini alıp çizdirdiğim kısım------
             if ((harfkontrol(self.lineEdit.text())) and (harfkontrol(self.lineEdit_2.text())) and (
                     harfkontrol(self.lineEdit_3.text())) and (harfkontrol(self.lineEdit_4.text())) and (
                     harfkontrol(self.lineEdit_5.text()))):
@@ -466,8 +465,6 @@ class Ui_mainWindow(object):
                                             tosbaga.forward(230)
                                             tosbaga.left(90)
                                             tosbaga.forward(51)
-
-
                                 else:
                                     if (len(self.lineEdit_4.text()) == 0) or (self.lineEdit_4.text() == "0"):
                                         if (len(self.lineEdit_5.text()) != 0) and (self.lineEdit_5.text() != "0"):
@@ -564,14 +561,14 @@ class Ui_mainWindow(object):
                                                 tosbaga.penup()
                                                 cizim.konum = [-170, -145]
                                                 tosbaga.pendown()
-                                                if (len(self.lineEdit_3.text()) != 0) and (
-                                                    self.lineEdit_3.text() != "0"):
+                                                if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
                                                     if (self.comboBox_2.currentIndex() == 0):
-                                                        cizim.size = 1
+                                                        cizim.size = 0
+
                                                     else:
-                                                        cizim.size = 2
+                                                        cizim.size = 1
                                                 else:
-                                                    cizim.size = 1
+                                                    cizim.size = 0
                                                 cizim.toplayici(tosbaga)
                                                 tosbaga.forward(20)
                                                 tosbaga.left(90)
@@ -626,19 +623,22 @@ class Ui_mainWindow(object):
                                                 tosbaga.penup()
                                                 cizim.konum = [-170, -195]
                                                 tosbaga.pendown()
-                                                if (len(self.lineEdit_3.text()) != 0) and (
-                                                    self.lineEdit_3.text() != "0"):
-                                                    if (self.comboBox_2.currentIndex() == 0):
+                                                if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
+                                                    if (self.comboBox_2.currentIndex() == 1):
                                                         cizim.size = 0
-                                                    else:
-                                                        cizim.size = 1
+                                                        cizim.toplayici(tosbaga)
+                                                        tosbaga.left(90)
+                                                        tosbaga.forward(225)
+                                                        tosbaga.right(90)
+                                                        tosbaga.forward(45)
                                                 else:
                                                     cizim.size = 0
-                                                cizim.toplayici(tosbaga)
-                                                tosbaga.left(90)
-                                                tosbaga.forward(225)
-                                                tosbaga.right(90)
-                                                tosbaga.forward(45)
+                                                    cizim.toplayici(tosbaga)
+                                                    tosbaga.left(90)
+                                                    tosbaga.forward(225)
+                                                    tosbaga.right(90)
+                                                    tosbaga.forward(45)
+
                                     if (len(self.lineEdit_3.text()) != 0) and (self.lineEdit_3.text() != "0"):
                                         if (self.comboBox_2.currentIndex() == 0):
                                             cizim.konum = [-100, 80]
@@ -662,7 +662,6 @@ class Ui_mainWindow(object):
                                             tosbaga.forward(180)
                                             tosbaga.left(90)
                                             tosbaga.forward(51)
-
                             else:
                                 if (len(self.lineEdit_4.text()) != 0) and (self.lineEdit_4.text() != "0"):
                                     if (self.comboBox_3.currentIndex() == 0):
@@ -742,6 +741,7 @@ class Ui_mainWindow(object):
                                                 tosbaga.forward(110)
                                                 tosbaga.left(90)
                                                 tosbaga.forward(205)
+
                                             else:
                                                 cizim.konum = [-100, 80]
                                                 tosbaga.penup()
@@ -831,6 +831,7 @@ class Ui_mainWindow(object):
                                                 tosbaga.forward(180)
                                                 tosbaga.left(90)
                                                 tosbaga.forward(51)
+#---------------------------------------------------------------------------------------şeklin sonundaki toplayıcı çizimi için--------
                             cizim.konum = [105, 70]
                             if ((len(self.lineEdit_2.text()) != 0) and (self.lineEdit_2.text() != "0")) or (
                                         (len(self.lineEdit_4.text()) != 0) and (self.lineEdit_4.text() != "0")):
@@ -919,10 +920,8 @@ class Ui_mainWindow(object):
                             tosbaga.left(90)
                             tosbaga.forward(330)
 
-    wn.mainloop()
-   
-#-----------------------------------------------------------------------------------------------------------------------
-
+        wn.mainloop()
+#------------------------------------------------------------------------------------------------------------------------------
 def isaretKontrol(test):
     durum = True
     for i in range(0, len(test)):
@@ -962,6 +961,7 @@ def harfkontrol(test):
         if (not durum):
             break
     return durum
+#------------------------------------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
     import sys
